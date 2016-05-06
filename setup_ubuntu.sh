@@ -21,6 +21,7 @@ wget http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2 -O 
 tar xvjf subl.tar.bz2
 mv Sublime\ Text\ 2/ ~/Sublime
 sudo ln -s ~/Sublime/sublime_text /usr/bin/subl
+cd ~
 mv sublime/Default\ \(Linux\).sublime-keymap ~/.config/sublime-text-2/Packages/User/Default\ \(Linux\).sublime-keymap
 mv sublime/Default\ \(OSX\).sublime-keymap ~/.config/sublime-text-2/Packages/User/Default\ \(OSX\).sublime-keymap
 mv sublime/Default\ \(Windows\).sublime-keymap ~/.config/sublime-text-2/Packages/User/Default\ \(Windows\).sublime-keymap
