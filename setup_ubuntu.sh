@@ -1,12 +1,24 @@
+cwd=$(pwd)
+
 sudo apt-get update -y
 sudo apt-get upgrade -y
-sudo apt-get install -y build-essential module-assistant
+sudo apt-get install -y build-essential module-assistant linux-headers-$(uname -r)
+sudo apt-get -y open-vm-tools open-vm-tools-desktop
 
-sudo apt-get install -y i3 ruby feh vim chromium-browser git scrot wine nmap wireshark tcpdump tshark binutils tree
+#i3 gaps dependencies
+sudo apt-get install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev
+
+cd ~
+git clone https://www.github.com/Airblader/i3 i3-gaps
+cd i3-gaps
+git checkout gaps && git pull
+make
+sudo make install
+
+sudo apt-get install -y i3 ruby feh vim git scrot wine nmap tcpdump tshark binutils tree
 
 git config --global user.email "alex.lynch@knights.ucf.edu"
 git config --global user.name "Alex Lynch"
-
 
 mkdir ~/.vim
 mkdir ~/.vim/colors
@@ -21,11 +33,16 @@ wget http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2 -O 
 tar xvjf subl.tar.bz2
 mv Sublime\ Text\ 2/ ~/Sublime
 sudo ln -s ~/Sublime/sublime_text /usr/bin/subl
-cd ~
-mv sublime/Default\ \(Linux\).sublime-keymap ~/.config/sublime-text-2/Packages/User/Default\ \(Linux\).sublime-keymap
-mv sublime/Default\ \(OSX\).sublime-keymap ~/.config/sublime-text-2/Packages/User/Default\ \(OSX\).sublime-keymap
-mv sublime/Default\ \(Windows\).sublime-keymap ~/.config/sublime-text-2/Packages/User/Default\ \(Windows\).sublime-keymap
-mv sublime/Preferences.sublime-settings ~/.config/sublime-text-2/Packages/User/Preferences.sublime-settings
+#run sublimetext to create config directories
+subl
+sleep 2
+kill $(pgrep subl)
+
+cd $cwd
+cp sublime/Default\ \(Linux\).sublime-keymap ~/.config/sublime-text-2/Packages/User/Default\ \(Linux\).sublime-keymap
+cp sublime/Default\ \(OSX\).sublime-keymap ~/.config/sublime-text-2/Packages/User/Default\ \(OSX\).sublime-keymap
+cp sublime/Default\ \(Windows\).sublime-keymap ~/.config/sublime-text-2/Packages/User/Default\ \(Windows\).sublime-keymap
+cp sublime/Preferences.sublime-settings ~/.config/sublime-text-2/Packages/User/Preferences.sublime-settings
 
 #radare
 cd ~
@@ -33,3 +50,11 @@ git clone https://github.com/radare/radare2.git
 bash radare2/sys/install.sh
 
 #binwalk
+
+#peda
+cd ~
+git clone https://github.com/longld/peda.git ~/peda
+echo "source ~/peda/peda.py" >> ~/.gdbinit
+
+# these have curses dialogs to click through
+sudo apt-get install -y wireshark chromium-browser
