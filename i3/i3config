@@ -140,4 +140,4 @@ bar {
 }
 
 exec vmware-user --no-startup-id
-exec --no-startup-id sleep 2; sh ~/.fehbg
+exec vmware-user-suid-wrapper --no-startup-id

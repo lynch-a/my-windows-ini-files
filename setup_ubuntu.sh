@@ -20,13 +20,14 @@ sudo apt-get install -y i3 ruby feh vim git scrot wine nmap tcpdump tshark binut
 git config --global user.email "alex.lynch@knights.ucf.edu"
 git config --global user.name "Alex Lynch"
 
+cd $cwd
 mkdir ~/.vim
 mkdir ~/.vim/colors
-mv vim/badwolf.vim ~/.vim/colors/badwolf.vim
-mv vim/.vimrc ~/.vimrc
+cp vim/badwolf.vim ~/.vim/colors/badwolf.vim
+cp vim/.vimrc ~/.vimrc
 
-mkdir ~/.i3/
-mv i3/i3config ~/.i3/config
+mkdir ~/.config/i3/
+mv i3/i3config ~/.config/i3/config
 
 cd ~/Downloads
 wget http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2 -O subl.tar.bz2
@@ -34,7 +35,7 @@ tar xvjf subl.tar.bz2
 mv Sublime\ Text\ 2/ ~/Sublime
 sudo ln -s ~/Sublime/sublime_text /usr/bin/subl
 #run sublimetext to create config directories
-subl
+subl &
 sleep 2
 kill $(pgrep subl)
 
