@@ -40,11 +40,10 @@ cd awesome-copycats
 mv * ~/.config/awesome
 cd ../
 rm -rf awesome-copycats
-#cp ~/.config/awesome/rc.lua.multicolor ~/.config/awesome/rc.lua
+
 cd $cwd
 cp awesome/rc.lua ~/.config/awesome/rc.lua
-#echo -e "\n\nrun_once(\"vmware-user-suid-wrapper --no-startup-id\")" >> ~/.config/awesome/rc.lua
-
+cp awesome/theme.lua ~/.config/awesome/themes/multicolor/theme.lua
 
 cd ~/Downloads
 wget http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2 -O subl.tar.bz2
