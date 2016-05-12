@@ -1,5 +1,7 @@
 cwd=$(pwd)
 
+sudo add-apt-repository ppa:klaus-vormweg/awesome
+
 sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get install -y build-essential module-assistant linux-headers-$(uname -r)
@@ -8,12 +10,12 @@ sudo apt-get -y open-vm-tools open-vm-tools-desktop
 #i3 gaps dependencies
 sudo apt-get install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev
 
-cd ~
-git clone https://www.github.com/Airblader/i3 i3-gaps
-cd i3-gaps
-git checkout gaps && git pull
-make
-sudo make install
+#cd ~
+#git clone https://www.github.com/Airblader/i3 i3-gaps
+#cd i3-gaps
+#git checkout gaps && git pull
+#make
+#sudo make install
 
 sudo apt-get install -y i3 ruby feh vim git scrot wine nmap tcpdump tshark binutils tree
 
@@ -28,6 +30,21 @@ cp vim/.vimrc ~/.vimrc
 
 mkdir ~/.config/i3/
 mv i3/i3config ~/.config/i3/config
+
+sudo apt-get update
+sudo apt-get install awesome
+cd ~
+git clone --recursive https://github.com/copycat-killer/awesome-copycats.git
+mkdir ~/.config/awesome
+cd awesome-copycats
+mv * ~/.config/awesome
+cd ../
+rm -rf awesome-copycats
+#cp ~/.config/awesome/rc.lua.multicolor ~/.config/awesome/rc.lua
+cd $cwd
+cp awesome/rc.lua ~/.config/awesome/rc.lua
+#echo -e "\n\nrun_once(\"vmware-user-suid-wrapper --no-startup-id\")" >> ~/.config/awesome/rc.lua
+
 
 cd ~/Downloads
 wget http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2 -O subl.tar.bz2
