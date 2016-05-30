@@ -50,8 +50,7 @@ wget http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2 -O 
 tar xvjf subl.tar.bz2
 mv Sublime\ Text\ 2/ ~/Sublime
 sudo ln -s ~/Sublime/sublime_text /usr/bin/subl
-#run sublimetext to create config directories
-subl &
+subl & #run sublimetext to create config directories
 sleep 2
 kill $(pgrep subl)
 
@@ -60,6 +59,13 @@ cp sublime/Default\ \(Linux\).sublime-keymap ~/.config/sublime-text-2/Packages/U
 cp sublime/Default\ \(OSX\).sublime-keymap ~/.config/sublime-text-2/Packages/User/Default\ \(OSX\).sublime-keymap
 cp sublime/Default\ \(Windows\).sublime-keymap ~/.config/sublime-text-2/Packages/User/Default\ \(Windows\).sublime-keymap
 cp sublime/Preferences.sublime-settings ~/.config/sublime-text-2/Packages/User/Preferences.sublime-settings
+
+
+#afl
+cd ~
+wget http://lcamtuf.coredump.cx/afl/releases/afl-latest.tgz -O afl.tgz
+tar -xzf afl.tgz
+## this will unzip a folder with an unknown name. just cd into it and run make to install afl :\
 
 #radare
 cd ~
