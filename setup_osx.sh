@@ -22,3 +22,10 @@ cp sublime/Default\ \(Linux\).sublime-keymap ~/Library/Application\ Support/Subl
 cp sublime/Default\ \(OSX\).sublime-keymap ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Default\ \(OSX\).sublime-keymap
 cp sublime/Default\ \(Windows\).sublime-keymap ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Default\ \(Windows\).sublime-keymap
 cp sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+
+# setup hotkeys
+# preferences -> keyboard -> shortcut -> "Zoom" on cmd+shift+m
+# preferences -> trackpad -> enable "3 finger click and drag"
+# setup gestures
+  # four finger swipe up for mission control
+	# four fingers to swipe between desktops
