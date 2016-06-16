@@ -23,6 +23,12 @@ cp sublime/Default\ \(OSX\).sublime-keymap ~/Library/Application\ Support/Sublim
 cp sublime/Default\ \(Windows\).sublime-keymap ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Default\ \(Windows\).sublime-keymap
 cp sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
 
+# install homebrew - run remote code from the internet ofc
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# install+compile latest vim for +clipboard option
+brew install vim
+
 # setup hotkeys
 # preferences -> keyboard -> shortcut -> "Zoom" on cmd+shift+m
 # preferences -> trackpad -> enable "3 finger click and drag"

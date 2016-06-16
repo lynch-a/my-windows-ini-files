@@ -3,6 +3,8 @@ colorscheme badwolf
 " Enable syntax highlighting
 syntax on
 
+set clipboard=unnamed
+
 set hidden
 
 " Better command-line completion
