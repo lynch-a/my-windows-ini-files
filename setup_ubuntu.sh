@@ -17,7 +17,7 @@ sudo apt-get install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-u
 #make
 #sudo make install
 
-sudo apt-get install -y i3 ruby feh vim git scrot wine nmap tcpdump tshark binutils tree
+#sudo apt-get install -y i3 ruby feh vim git scrot wine nmap tcpdump tshark binutils tree
 
 git config --global user.email "alex.lynch@knights.ucf.edu"
 git config --global user.name "Alex Lynch"
@@ -28,10 +28,9 @@ mkdir ~/.vim/colors
 cp vim/badwolf.vim ~/.vim/colors/badwolf.vim
 cp vim/.vimrc ~/.vimrc
 
-mkdir ~/.config/i3/
-mv i3/i3config ~/.config/i3/config
+#mkdir ~/.config/i3/
+#mv i3/i3config ~/.config/i3/config
 
-sudo apt-get update
 sudo apt-get install awesome
 cd ~
 git clone --recursive https://github.com/copycat-killer/awesome-copycats.git
@@ -44,6 +43,7 @@ rm -rf awesome-copycats
 cd $cwd
 cp awesome/rc.lua ~/.config/awesome/rc.lua
 cp awesome/theme.lua ~/.config/awesome/themes/multicolor/theme.lua
+cp awesome/wall2.png ~/.config/awesome/themes/multicolor/wall2.png
 
 cd ~/Downloads
 wget http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2 -O subl.tar.bz2
