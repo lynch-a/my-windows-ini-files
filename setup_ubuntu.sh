@@ -17,7 +17,7 @@ sudo apt-get install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-u
 #make
 #sudo make install
 
-#sudo apt-get install -y i3 ruby feh vim git scrot wine nmap tcpdump tshark binutils tree
+sudo apt-get install -y i3 ruby feh vim git scrot wine nmap tcpdump tshark binutils tree
 
 git config --global user.email "alex.lynch@knights.ucf.edu"
 git config --global user.name "Alex Lynch"
@@ -31,7 +31,7 @@ cp vim/.vimrc ~/.vimrc
 #mkdir ~/.config/i3/
 #mv i3/i3config ~/.config/i3/config
 
-sudo apt-get install awesome
+sudo apt-get install -y awesome
 cd ~
 git clone --recursive https://github.com/copycat-killer/awesome-copycats.git
 mkdir ~/.config/awesome
@@ -59,7 +59,6 @@ cp sublime/Default\ \(Linux\).sublime-keymap ~/.config/sublime-text-2/Packages/U
 cp sublime/Default\ \(OSX\).sublime-keymap ~/.config/sublime-text-2/Packages/User/Default\ \(OSX\).sublime-keymap
 cp sublime/Default\ \(Windows\).sublime-keymap ~/.config/sublime-text-2/Packages/User/Default\ \(Windows\).sublime-keymap
 cp sublime/Preferences.sublime-settings ~/.config/sublime-text-2/Packages/User/Preferences.sublime-settings
-
 
 #afl
 cd ~
